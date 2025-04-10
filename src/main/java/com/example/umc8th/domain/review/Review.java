@@ -1,9 +1,13 @@
 package com.example.umc8th.domain.review;
 
+import com.example.umc8th.domain.member.Member;
+import com.example.umc8th.domain.restaurant.Restaurant;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -21,4 +25,16 @@ public class Review {
 
     @Column(precision = 2, scale = 1)
     private BigDecimal rating;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "restaurant_id")
+    private Restaurant restaurant;
+
+    @Builder.Default
+    @OneToMany(mappedBy = "review", cascade = CascadeType.ALL)
+    private List<ReviewImage> reviewImageList = new ArrayList<>();
 }

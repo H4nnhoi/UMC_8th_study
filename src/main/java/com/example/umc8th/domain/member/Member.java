@@ -1,9 +1,14 @@
 package com.example.umc8th.domain.member;
 
+import com.example.umc8th.domain.foodType.PreferFoodType;
+import com.example.umc8th.domain.mission.Mission;
+import com.example.umc8th.domain.mission.MyMission;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -42,4 +47,12 @@ public class Member {
     private String email;
 
     private Integer point;
+
+    @Builder.Default
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    private List<MyMission> myMissionList = new ArrayList<>();
+
+    @Builder.Default
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    private List<PreferFoodType> preferFoodTypeList = new ArrayList<>();
 }
