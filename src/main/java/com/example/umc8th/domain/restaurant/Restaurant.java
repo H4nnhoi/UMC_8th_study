@@ -1,17 +1,19 @@
 package com.example.umc8th.domain.restaurant;
 
+import com.example.umc8th.domain.common.BaseEntity;
 import com.example.umc8th.domain.foodType.FoodType;
 import com.example.umc8th.domain.member.Member;
 import com.example.umc8th.domain.region.Region;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @Getter
-@Builder
+@SuperBuilder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Restaurant {
+public class Restaurant extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

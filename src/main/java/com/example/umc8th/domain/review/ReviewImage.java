@@ -1,15 +1,17 @@
 package com.example.umc8th.domain.review;
 
+import com.example.umc8th.domain.common.BaseEntity;
 import com.example.umc8th.domain.mission.Mission;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @Getter
-@Builder
+@SuperBuilder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class ReviewImage {
+public class ReviewImage extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

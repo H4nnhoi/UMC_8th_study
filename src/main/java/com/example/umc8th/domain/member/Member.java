@@ -1,10 +1,12 @@
 package com.example.umc8th.domain.member;
 
+import com.example.umc8th.domain.common.BaseEntity;
 import com.example.umc8th.domain.foodType.PreferFoodType;
 import com.example.umc8th.domain.mission.Mission;
 import com.example.umc8th.domain.mission.MyMission;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -12,10 +14,10 @@ import java.util.List;
 
 @Entity
 @Getter
-@Builder
+@SuperBuilder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Member {
+public class Member extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

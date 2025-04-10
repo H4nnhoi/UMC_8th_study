@@ -1,9 +1,11 @@
 package com.example.umc8th.domain.review;
 
+import com.example.umc8th.domain.common.BaseEntity;
 import com.example.umc8th.domain.member.Member;
 import com.example.umc8th.domain.restaurant.Restaurant;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -11,10 +13,10 @@ import java.util.List;
 
 @Entity
 @Getter
-@Builder
+@SuperBuilder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Review {
+public class Review extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

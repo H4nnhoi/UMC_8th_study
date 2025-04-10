@@ -1,16 +1,18 @@
 package com.example.umc8th.domain.mission;
 
+import com.example.umc8th.domain.common.BaseEntity;
 import com.example.umc8th.domain.foodType.FoodType;
 import com.example.umc8th.domain.member.Member;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @Getter
-@Builder
+@SuperBuilder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class MyMission {
+public class MyMission extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "my_mission_id")

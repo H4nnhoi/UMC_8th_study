@@ -1,15 +1,17 @@
 package com.example.umc8th.domain.foodType;
 
+import com.example.umc8th.domain.common.BaseEntity;
 import com.example.umc8th.domain.member.Member;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @Getter
-@Builder
+@SuperBuilder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class PreferFoodType {
+public class PreferFoodType extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
