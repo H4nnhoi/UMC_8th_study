@@ -34,6 +34,9 @@ public class Member {
     @Enumerated(EnumType.STRING)
     private MemberStatus status;
 
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
     private LocalDate inactiveDate;
 
     private String email;

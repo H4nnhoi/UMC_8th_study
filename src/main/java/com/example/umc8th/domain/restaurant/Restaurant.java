@@ -1,6 +1,7 @@
 package com.example.umc8th.domain.restaurant;
 
 import com.example.umc8th.domain.foodType.FoodType;
+import com.example.umc8th.domain.member.Member;
 import com.example.umc8th.domain.region.Region;
 import jakarta.persistence.*;
 import lombok.*;
@@ -30,6 +31,10 @@ public class Restaurant {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "region_id")
     private Region region;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "store_owner_id")
+    private Member storeOwner;
 
 
 }
