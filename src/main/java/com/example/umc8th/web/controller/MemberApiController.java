@@ -18,7 +18,7 @@ public class MemberApiController {
     }
 
     @DeleteMapping("/{memberId}")
-    public void removeMember(@PathVariable Long memberId) {
+    public void removeMemberWithAllRelations(@PathVariable Long memberId) {
         memberCommandService.removeMember(memberId);
     }
 
