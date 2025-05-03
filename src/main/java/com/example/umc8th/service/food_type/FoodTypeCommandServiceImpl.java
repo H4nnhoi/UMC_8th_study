@@ -4,7 +4,7 @@ import com.example.umc8th.domain.foodType.FoodType;
 import com.example.umc8th.domain.foodType.PreferFoodType;
 import com.example.umc8th.domain.member.Member;
 import com.example.umc8th.repository.foodtype.FoodTypeRepository;
-import com.example.umc8th.repository.MemberRepository;
+import com.example.umc8th.repository.member.MemberRepository;
 import com.example.umc8th.repository.foodtype.PreferFoodTypeRepository;
 import com.example.umc8th.web.dto.foodtype.RequestFoodTypeDto;
 import lombok.RequiredArgsConstructor;

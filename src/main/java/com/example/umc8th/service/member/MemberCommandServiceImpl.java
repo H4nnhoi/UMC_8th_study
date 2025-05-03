@@ -3,7 +3,7 @@ package com.example.umc8th.service.member;
 import com.example.umc8th.domain.member.Member;
 import com.example.umc8th.domain.member.MemberStatus;
 import com.example.umc8th.domain.member.Role;
-import com.example.umc8th.repository.MemberRepository;
+import com.example.umc8th.repository.member.MemberRepository;
 import com.example.umc8th.repository.mission.MyMissionRepository;
 import com.example.umc8th.repository.foodtype.PreferFoodTypeRepository;
 import com.example.umc8th.web.dto.member.RequestMemberDto;

@@ -5,7 +5,7 @@ import com.example.umc8th.domain.mission.Mission;
 import com.example.umc8th.domain.mission.MissionStatus;
 import com.example.umc8th.domain.mission.MyMission;
 import com.example.umc8th.domain.restaurant.Restaurant;
-import com.example.umc8th.repository.MemberRepository;
+import com.example.umc8th.repository.member.MemberRepository;
 import com.example.umc8th.repository.mission.MissionRepository;
 import com.example.umc8th.repository.mission.MyMissionRepository;
 import com.example.umc8th.repository.restaurant.RestaurantRepository;

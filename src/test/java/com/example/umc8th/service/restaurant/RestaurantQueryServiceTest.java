@@ -8,7 +8,7 @@ import com.example.umc8th.domain.member.Role;
 import com.example.umc8th.domain.region.Region;
 import com.example.umc8th.domain.restaurant.Restaurant;
 import com.example.umc8th.repository.foodtype.FoodTypeRepository;
-import com.example.umc8th.repository.MemberRepository;
+import com.example.umc8th.repository.member.MemberRepository;
 import com.example.umc8th.repository.RegionRepository.RegionRepository;
 import com.example.umc8th.repository.restaurant.RestaurantRepository;
 import com.example.umc8th.service.DatabaseCleanUp;
