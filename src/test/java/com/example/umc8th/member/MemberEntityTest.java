@@ -7,6 +7,8 @@ import com.example.umc8th.domain.member.Member;
 import com.example.umc8th.repository.*;
 import com.example.umc8th.repository.foodtype.FoodTypeRepository;
 import com.example.umc8th.repository.foodtype.PreferFoodTypeRepository;
+import com.example.umc8th.repository.mission.MissionRepository;
+import com.example.umc8th.repository.mission.MyMissionRepository;
 import com.example.umc8th.service.DatabaseCleanUp;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

@@ -157,9 +157,11 @@ class RestaurantQueryServiceTest {
         Float targetScore = 4.0F;
         String targetName = "name1";
         //when
-        List<Restaurant> result = restaurantQueryService.findRestaurantsByNameAndScore(targetName, targetScore);
+        List<Restaurant> result1 = restaurantQueryService.findRestaurantsByNameAndScore(targetName, targetScore);
+        List<Restaurant> result2 = restaurantQueryService.findRestaurantsByNameAndScore(targetName, null);
         //then
-        assertThat(result.size()).isEqualTo(2);
+        assertThat(result1.size()).isEqualTo(2);
+        assertThat(result2.size()).isEqualTo(5);
     }
 
 }
