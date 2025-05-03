@@ -5,6 +5,8 @@ import com.example.umc8th.domain.foodType.PreferFoodType;
 import com.example.umc8th.domain.member.Gender;
 import com.example.umc8th.domain.member.Member;
 import com.example.umc8th.repository.*;
+import com.example.umc8th.repository.foodtype.FoodTypeRepository;
+import com.example.umc8th.repository.foodtype.PreferFoodTypeRepository;
 import com.example.umc8th.service.DatabaseCleanUp;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,7 +14,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.List;

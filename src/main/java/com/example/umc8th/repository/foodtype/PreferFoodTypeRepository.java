@@ -1,4 +1,4 @@
-package com.example.umc8th.repository;
+package com.example.umc8th.repository.foodtype;
 
 import com.example.umc8th.domain.foodType.PreferFoodType;
 import org.springframework.data.jpa.repository.JpaRepository;

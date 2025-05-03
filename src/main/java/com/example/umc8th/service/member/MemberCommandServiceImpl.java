@@ -5,7 +5,7 @@ import com.example.umc8th.domain.member.MemberStatus;
 import com.example.umc8th.domain.member.Role;
 import com.example.umc8th.repository.MemberRepository;
 import com.example.umc8th.repository.MyMissionRepository;
-import com.example.umc8th.repository.PreferFoodTypeRepository;
+import com.example.umc8th.repository.foodtype.PreferFoodTypeRepository;
 import com.example.umc8th.web.dto.member.RequestMemberDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
