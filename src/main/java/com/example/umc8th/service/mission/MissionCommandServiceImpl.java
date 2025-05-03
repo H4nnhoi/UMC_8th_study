@@ -8,7 +8,7 @@ import com.example.umc8th.domain.restaurant.Restaurant;
 import com.example.umc8th.repository.MemberRepository;
 import com.example.umc8th.repository.MissionRepository;
 import com.example.umc8th.repository.MyMissionRepository;
-import com.example.umc8th.repository.RestaurantRepository;
+import com.example.umc8th.repository.restaurant.RestaurantRepository;
 import com.example.umc8th.web.dto.mission.RequestMissionDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
