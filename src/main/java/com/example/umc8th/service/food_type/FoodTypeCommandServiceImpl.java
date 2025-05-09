@@ -3,18 +3,13 @@ package com.example.umc8th.service.food_type;
 import com.example.umc8th.domain.foodType.FoodType;
 import com.example.umc8th.domain.foodType.PreferFoodType;
 import com.example.umc8th.domain.member.Member;
-import com.example.umc8th.domain.mission.Mission;
-import com.example.umc8th.domain.mission.MissionStatus;
-import com.example.umc8th.domain.mission.MyMission;
-import com.example.umc8th.repository.FoodTypeRepository;
-import com.example.umc8th.repository.MemberRepository;
-import com.example.umc8th.repository.PreferFoodTypeRepository;
+import com.example.umc8th.repository.foodtype.FoodTypeRepository;
+import com.example.umc8th.repository.member.MemberRepository;
+import com.example.umc8th.repository.foodtype.PreferFoodTypeRepository;
 import com.example.umc8th.web.dto.foodtype.RequestFoodTypeDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.UUID;
 
 @Service
 @Transactional
@@ -43,6 +38,8 @@ public class FoodTypeCommandServiceImpl implements FoodTypeCommandService{
                 .foodType(foodType)
                 .member(member)
                 .build();
+//        member.getPreferFoodTypeList().add(preferFoodType);
         return preferFoodTypeRepository.save(preferFoodType).getId();
+//        return null;
     }
 }

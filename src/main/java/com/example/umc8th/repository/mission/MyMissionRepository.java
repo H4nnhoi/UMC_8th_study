@@ -1,4 +1,4 @@
-package com.example.umc8th.repository;
+package com.example.umc8th.repository.mission;
 
 import com.example.umc8th.domain.mission.MyMission;
 import org.springframework.data.jpa.repository.JpaRepository;
