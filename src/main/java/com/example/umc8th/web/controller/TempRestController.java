@@ -28,4 +28,10 @@ public class TempRestController {
         tempQueryService.CheckFlag(flag);
         return ApiResponse.onSuccess(TempConverter.toTempExceptionDTO(flag));
     }
+
+    @GetMapping("/test-npe")
+    public String nullPointerError() {
+        String str = null;
+        return str.toString(); // NullPointerException 발생
+    }
 }
