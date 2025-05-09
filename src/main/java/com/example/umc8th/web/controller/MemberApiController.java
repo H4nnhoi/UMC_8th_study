@@ -1,9 +1,13 @@
 package com.example.umc8th.web.controller;
 
+import com.example.umc8th.domain.member.Member;
+import com.example.umc8th.repository.member.MemberRepository;
 import com.example.umc8th.service.member.MemberCommandService;
 import com.example.umc8th.web.dto.member.RequestMemberDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/members")
@@ -11,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 public class MemberApiController {
 
     private final MemberCommandService memberCommandService;
+    private final MemberRepository memberRepository;
 
     @PostMapping
     public Long registerMember(@RequestBody RequestMemberDto requestMemberDto) {
@@ -20,6 +25,13 @@ public class MemberApiController {
     @DeleteMapping("/{memberId}")
     public void removeMemberWithAllRelations(@PathVariable Long memberId) {
         memberCommandService.removeMember(memberId);
+    }
+
+    @GetMapping
+    public List<String> allMemberUsername() {
+        List<Member> all = memberRepository.findAll();
+        return all.stream().map(member -> member.getName())
+                .toList();
     }
 
 

@@ -23,7 +23,7 @@ public class MyRegion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "region_id")
+    @Column(name = "my_region_id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)

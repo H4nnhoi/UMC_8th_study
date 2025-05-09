@@ -38,6 +38,8 @@ public class FoodTypeCommandServiceImpl implements FoodTypeCommandService{
                 .foodType(foodType)
                 .member(member)
                 .build();
+//        member.getPreferFoodTypeList().add(preferFoodType);
         return preferFoodTypeRepository.save(preferFoodType).getId();
+//        return null;
     }
 }
