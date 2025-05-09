@@ -1,7 +1,7 @@
 package com.example.umc8th.apiPayload.code.status;
 
 import com.example.umc8th.apiPayload.code.BaseCode;
-import com.example.umc8th.apiPayload.code.ReasonDTO;
+import com.example.umc8th.apiPayload.code.Reason;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
@@ -18,8 +18,8 @@ public enum SuccessStatus implements BaseCode {
     private final String message;
 
     @Override
-    public ReasonDTO getReason() {
-        return ReasonDTO.builder()
+    public Reason getReason() {
+        return Reason.builder()
                 .message(message)
                 .code(code)
                 .isSuccess(true)
@@ -27,8 +27,8 @@ public enum SuccessStatus implements BaseCode {
     }
 
     @Override
-    public ReasonDTO getReasonHttpStatus() {
-        return ReasonDTO.builder()
+    public Reason getReasonHttpStatus() {
+        return Reason.builder()
                 .message(message)
                 .code(code)
                 .isSuccess(true)

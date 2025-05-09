@@ -1,7 +1,7 @@
 package com.example.umc8th.apiPayload.code.status;
 
 import com.example.umc8th.apiPayload.code.BaseErrorCode;
-import com.example.umc8th.apiPayload.code.ErrorReasonDTO;
+import com.example.umc8th.apiPayload.code.ErrorReason;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
@@ -30,8 +30,8 @@ public enum ErrorStatus implements BaseErrorCode {
     private final String message;
 
     @Override
-    public ErrorReasonDTO getReason() {
-        return ErrorReasonDTO.builder()
+    public ErrorReason getReason() {
+        return ErrorReason.builder()
                 .message(message)
                 .code(code)
                 .isSuccess(false)
@@ -39,8 +39,8 @@ public enum ErrorStatus implements BaseErrorCode {
     }
 
     @Override
-    public ErrorReasonDTO getReasonHttpStatus() {
-        return ErrorReasonDTO.builder()
+    public ErrorReason getReasonHttpStatus() {
+        return ErrorReason.builder()
                 .message(message)
                 .code(code)
                 .isSuccess(false)
