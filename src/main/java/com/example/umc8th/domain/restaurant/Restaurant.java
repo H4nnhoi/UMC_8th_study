@@ -26,11 +26,8 @@ public class Restaurant extends BaseEntity {
 
     private String address;
 
-    private Float score;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "food_type_id")
-    private FoodType foodType;
+    @Builder.Default
+    private Float score = 0.0f;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "region_id")

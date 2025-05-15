@@ -1,6 +1,5 @@
-package com.example.umc8th.repository.RegionRepository;
+package com.example.umc8th.repository.region;
 
-import com.example.umc8th.domain.region.MyRegion;
 import com.example.umc8th.domain.region.Region;
 import com.example.umc8th.domain.region.RegionStatus;
 import com.example.umc8th.web.dto.home.HomeDto;
@@ -11,7 +10,6 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static com.example.umc8th.domain.member.QMember.member;
