@@ -20,4 +20,10 @@ public class MissionApiController {
                                                     @RequestBody RequestMissionDto.AddDto missionDto) {
         return ApiResponse.onSuccess(missionCommandService.registerMission(restaurantId, missionDto));
     }
+
+    @PostMapping("/{missionId}/members/{memberId}")
+    public ApiResponse<Long> addMyMission(@PathVariable Long missionId,
+                                          @PathVariable Long memberId) {
+        return ApiResponse.onSuccess(missionCommandService.addMissionOfMember(memberId, missionId));
+    }
 }
