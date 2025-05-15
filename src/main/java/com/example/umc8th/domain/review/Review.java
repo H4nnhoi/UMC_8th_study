@@ -25,8 +25,8 @@ public class Review extends BaseEntity {
 
     private String content;
 
-    @Column(precision = 2, scale = 1)
-    private BigDecimal rating;
+//    @Column(precision = 2, scale = 1)
+//    private BigDecimal rating;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
@@ -35,8 +35,4 @@ public class Review extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "restaurant_id")
     private Restaurant restaurant;
-
-    @Builder.Default
-    @OneToMany(mappedBy = "review", cascade = CascadeType.ALL)
-    private List<ReviewImage> reviewImageList = new ArrayList<>();
 }
