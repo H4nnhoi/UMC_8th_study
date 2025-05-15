@@ -19,7 +19,7 @@ import lombok.experimental.SuperBuilder;
                 @UniqueConstraint(columnNames = {"member_id", "region_status"})  // 조건 없이 전체 조합을 유니크로 강제
         }
 )
-public class MyRegion {
+public class MemberRegion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
