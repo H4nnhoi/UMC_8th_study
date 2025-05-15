@@ -9,7 +9,7 @@ import com.example.umc8th.repository.member.MemberRepository;
 import com.example.umc8th.repository.mission.MissionRepository;
 import com.example.umc8th.repository.mission.MyMissionRepository;
 import com.example.umc8th.repository.restaurant.RestaurantRepository;
-import com.example.umc8th.web.converter.MissionConverter;
+import com.example.umc8th.converter.MissionConverter;
 import com.example.umc8th.web.dto.mission.RequestMissionDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

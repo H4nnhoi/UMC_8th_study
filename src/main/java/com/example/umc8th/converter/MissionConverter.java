@@ -1,4 +1,4 @@
-package com.example.umc8th.web.converter;
+package com.example.umc8th.converter;
 
 import com.example.umc8th.domain.mission.Mission;
 import com.example.umc8th.web.dto.mission.RequestMissionDto;
