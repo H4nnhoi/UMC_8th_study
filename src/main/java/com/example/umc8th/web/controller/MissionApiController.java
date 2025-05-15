@@ -21,9 +21,10 @@ public class MissionApiController {
         return ApiResponse.onSuccess(missionCommandService.registerMission(restaurantId, missionDto));
     }
 
-    @PostMapping("/{missionId}/members/{memberId}")
-    public ApiResponse<Long> addMyMission(@PathVariable Long missionId,
-                                          @PathVariable Long memberId) {
-        return ApiResponse.onSuccess(missionCommandService.addMissionOfMember(memberId, missionId));
+    @PostMapping
+    public ApiResponse<Long> addMyMission(@RequestBody RequestMissionDto.MyMissionDto dto) {
+        return ApiResponse.onSuccess(missionCommandService
+                .addMissionOfMember(dto.getMemberAndMission().getKey(), dto.getMemberAndMission().getValue()));
     }
+
 }

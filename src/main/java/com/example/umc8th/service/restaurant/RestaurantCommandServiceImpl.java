@@ -9,7 +9,7 @@ import com.example.umc8th.domain.restaurant.Restaurant;
 import com.example.umc8th.repository.member.MemberRepository;
 import com.example.umc8th.repository.region.RegionRepository;
 import com.example.umc8th.repository.restaurant.RestaurantRepository;
-import com.example.umc8th.web.converter.RestaurantConverter;
+import com.example.umc8th.converter.RestaurantConverter;
 import com.example.umc8th.web.dto.region.RequestRestaurantDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

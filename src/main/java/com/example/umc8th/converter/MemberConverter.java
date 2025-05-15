@@ -1,4 +1,4 @@
-package com.example.umc8th.web.converter;
+package com.example.umc8th.converter;
 
 import com.example.umc8th.domain.member.Member;
 import com.example.umc8th.domain.member.Role;
