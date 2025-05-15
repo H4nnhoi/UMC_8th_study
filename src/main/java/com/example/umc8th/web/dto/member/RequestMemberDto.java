@@ -7,15 +7,20 @@ import com.example.umc8th.domain.member.SocialType;
 import lombok.Builder;
 import lombok.Data;
 
-@Data
-@Builder
+
 public class RequestMemberDto {
-    private String name;
-    private String nickname;
-    private String address;
-    private String specAddress;
-    private Gender gender;
-    private SocialType socialType;
-    private MemberStatus status;
-    private String email;
+
+    @Data
+    @Builder
+    public static class JoinDto{
+        private String name;
+        private String nickname;
+        private String address;
+        private String specAddress;
+        private Gender gender;
+        private SocialType socialType;
+        private MemberStatus status;
+        private String email;
+    }
+
 }

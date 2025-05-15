@@ -1,5 +1,6 @@
 package com.example.umc8th.web.controller;
 
+import com.example.umc8th.apiPayload.ApiResponse;
 import com.example.umc8th.domain.member.Member;
 import com.example.umc8th.repository.member.MemberRepository;
 import com.example.umc8th.service.member.MemberCommandService;
@@ -18,8 +19,8 @@ public class MemberApiController {
     private final MemberRepository memberRepository;
 
     @PostMapping
-    public Long registerMember(@RequestBody RequestMemberDto requestMemberDto) {
-        return memberCommandService.registerMember(requestMemberDto);
+    public ApiResponse<Long> registerMember(@RequestBody RequestMemberDto.JoinDto requestMemberDto) {
+        return ApiResponse.onSuccess(memberCommandService.registerMember(requestMemberDto));
     }
 
     @DeleteMapping("/{memberId}")

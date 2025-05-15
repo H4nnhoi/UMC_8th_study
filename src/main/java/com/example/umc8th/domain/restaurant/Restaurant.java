@@ -37,5 +37,10 @@ public class Restaurant extends BaseEntity {
     @JoinColumn(name = "store_owner_id")
     private Member storeOwner;
 
+    public void registerRegionAndOwner(Region region, Member member) {
+        this.region = region;
+        this.storeOwner = member;
+    }
+
 
 }

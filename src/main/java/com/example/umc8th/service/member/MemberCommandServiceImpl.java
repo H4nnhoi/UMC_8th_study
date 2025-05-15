@@ -6,7 +6,9 @@ import com.example.umc8th.domain.member.Role;
 import com.example.umc8th.repository.member.MemberRepository;
 import com.example.umc8th.repository.mission.MyMissionRepository;
 import com.example.umc8th.repository.foodtype.PreferFoodTypeRepository;
+import com.example.umc8th.web.dto.converter.MemberConverter;
 import com.example.umc8th.web.dto.member.RequestMemberDto;
+import com.example.umc8th.web.dto.member.RequestMemberDto.JoinDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,18 +23,8 @@ public class MemberCommandServiceImpl implements MemberCommandService{
     private final MyMissionRepository myMissionRepository;
 
     @Override
-    public Long registerMember(RequestMemberDto dto) {
-        Member member = Member.builder()
-                .socialType(dto.getSocialType())
-                .point(0)
-                .gender(dto.getGender())
-                .name(dto.getName())
-                .role(Role.ROLE_USER)
-                .status(MemberStatus.ACTIVE)
-                .email(dto.getEmail())
-                .nickname(dto.getNickname())
-                .address(dto.getAddress())
-                .build();
+    public Long registerMember(JoinDto dto) {
+        Member member = MemberConverter.joinToMemberEntity(dto);
         return memberRepository.save(member).getId();
     }
 

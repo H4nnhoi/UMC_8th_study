@@ -10,6 +10,7 @@ import com.example.umc8th.repository.member.MemberRepository;
 import com.example.umc8th.repository.region.RegionRepository;
 import com.example.umc8th.repository.restaurant.RestaurantRepository;
 import com.example.umc8th.service.region.RegionCommandService;
+import com.example.umc8th.web.dto.converter.RestaurantConverter;
 import com.example.umc8th.web.dto.region.RequestRestaurantDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -25,20 +26,15 @@ public class RestaurantCommandServiceImpl implements RestaurantCommandService {
     private final MemberRepository memberRepository;
 
     @Override
-    public Long registerRestaurantInRegion(Long regionId, Long memberId, RequestRestaurantDto dto) {
+    public Long registerRestaurantInRegion(Long regionId, Long memberId, RequestRestaurantDto.RegisterDto dto) {
         Region region = regionRepository.findById(regionId)
                 .orElseThrow(() -> new RegionHandler(ErrorStatus.REGION_NOT_FOUND));
         Member member = memberRepository.findById(memberId)
                 .orElseThrow(() -> new MemberHandler(ErrorStatus.MEMBER_NOT_FOUND));
 
-        Restaurant build = Restaurant.builder()
-                .address(dto.getAddress())
-                .name(dto.getName())
-                .imgUrl(dto.getImgUrl())
-                .region(region)
-                .storeOwner(member)
-                .build();
+        Restaurant restaurant = RestaurantConverter.registerToRestaurantEntity(dto);
+        restaurant.registerRegionAndOwner(region, member);
 
-        return restaurantRepository.save(build).getId();
+        return restaurantRepository.save(restaurant).getId();
     }
 }

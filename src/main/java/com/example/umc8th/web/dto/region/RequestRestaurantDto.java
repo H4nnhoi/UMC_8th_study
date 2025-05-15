@@ -4,12 +4,16 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.extern.jackson.Jacksonized;
 
-@Data
-@Builder
-@Jacksonized
+
 public class RequestRestaurantDto {
 
-    private String name;
-    private String imgUrl;
-    private String address;
+    @Data
+    @Builder
+    @Jacksonized
+    public static class RegisterDto{
+        private String name;
+        private String imgUrl;
+        private String address;
+    }
+
 }
