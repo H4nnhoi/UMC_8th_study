@@ -9,6 +9,7 @@ import com.example.umc8th.repository.member.MemberRepository;
 import com.example.umc8th.repository.mission.MissionRepository;
 import com.example.umc8th.repository.mission.MyMissionRepository;
 import com.example.umc8th.repository.restaurant.RestaurantRepository;
+import com.example.umc8th.web.converter.MissionConverter;
 import com.example.umc8th.web.dto.mission.RequestMissionDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -27,16 +28,11 @@ public class MissionCommandServiceImpl implements MissionCommandService{
     private final MyMissionRepository myMissionRepository;
 
     @Override
-    public Long registerMission(Long restaurantId, RequestMissionDto dto) {
+    public Long registerMission(Long restaurantId, RequestMissionDto.AddDto dto) {
         Restaurant restaurant = restaurantRepository.findById(restaurantId)
                 .orElseThrow(() -> new RuntimeException("not found restaurant"));
-        Mission mission = Mission.builder()
-                .point(dto.getPoint())
-                .content(dto.getContent())
-                .dueDate(dto.getDueDate())
-                .restaurant(restaurant)
-                .build();
-
+        Mission mission = MissionConverter.registerToMissionEntity(dto);
+        mission.addMissionInRestaurant(restaurant);
         return missionRepository.save(mission).getId();
     }
 
