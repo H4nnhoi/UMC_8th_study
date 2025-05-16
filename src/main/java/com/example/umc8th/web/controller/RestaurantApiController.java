@@ -5,6 +5,7 @@ import com.example.umc8th.domain.restaurant.Restaurant;
 import com.example.umc8th.service.restaurant.RestaurantCommandService;
 import com.example.umc8th.web.dto.region.RequestRestaurantDto;
 import com.example.umc8th.web.dto.region.RequestRestaurantDto.RegisterDto;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +19,7 @@ public class RestaurantApiController {
     @PostMapping("/regions/{regionId}/members/{memberId}")
     public ApiResponse<Long> registerRestaurant(@PathVariable Long regionId,
                                                 @PathVariable Long memberId,
-                                                @RequestBody RegisterDto dto) {
+                                                @RequestBody @Valid RegisterDto dto) {
         Long restaurantId = restaurantCommandService.registerRestaurantInRegion(regionId, memberId, dto);
         return ApiResponse.onSuccess(restaurantId);
     }

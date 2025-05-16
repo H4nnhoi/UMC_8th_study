@@ -5,6 +5,7 @@ import com.example.umc8th.domain.member.Member;
 import com.example.umc8th.repository.member.MemberRepository;
 import com.example.umc8th.service.member.MemberCommandService;
 import com.example.umc8th.web.dto.member.RequestMemberDto;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +20,7 @@ public class MemberApiController {
     private final MemberRepository memberRepository;
 
     @PostMapping
-    public ApiResponse<Long> registerMember(@RequestBody RequestMemberDto.JoinDto requestMemberDto) {
+    public ApiResponse<Long> registerMember(@RequestBody @Valid RequestMemberDto.JoinDto requestMemberDto) {
         return ApiResponse.onSuccess(memberCommandService.registerMember(requestMemberDto));
     }
 

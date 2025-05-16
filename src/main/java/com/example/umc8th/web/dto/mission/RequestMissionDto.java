@@ -1,6 +1,7 @@
 package com.example.umc8th.web.dto.mission;
 
 import com.example.umc8th.annotation.ExistMyMission;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,8 +18,11 @@ public class RequestMissionDto {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class AddDto{
+        @NotNull
         private String content;
+        @NotNull
         private LocalDate dueDate;
+        @NotNull
         private int point;
     }
     @Data

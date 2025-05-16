@@ -1,5 +1,6 @@
 package com.example.umc8th.web.dto.region;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,8 +15,10 @@ public class RequestRestaurantDto {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class RegisterDto{
+        @NotNull
         private String name;
         private String imgUrl;
+        @NotNull
         private String address;
     }
 

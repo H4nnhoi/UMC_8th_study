@@ -5,6 +5,7 @@ import com.example.umc8th.apiPayload.ApiResponse;
 import com.example.umc8th.service.mission.MissionCommandService;
 import com.example.umc8th.web.dto.mission.RequestMissionDto;
 import com.example.umc8th.web.dto.region.RequestRestaurantDto;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,12 +18,12 @@ public class MissionApiController {
 
     @PostMapping("/restaurants/{restaurantId}")
     public ApiResponse<Long> addMissionOfRestaurant(@PathVariable Long restaurantId,
-                                                    @RequestBody RequestMissionDto.AddDto missionDto) {
+                                                    @RequestBody @Valid RequestMissionDto.AddDto missionDto) {
         return ApiResponse.onSuccess(missionCommandService.registerMission(restaurantId, missionDto));
     }
 
     @PostMapping
-    public ApiResponse<Long> addMyMission(@RequestBody RequestMissionDto.MyMissionDto dto) {
+    public ApiResponse<Long> addMyMission(@RequestBody @Valid RequestMissionDto.MyMissionDto dto) {
         return ApiResponse.onSuccess(missionCommandService
                 .addMissionOfMember(dto.getMemberAndMission().getKey(), dto.getMemberAndMission().getValue()));
     }
