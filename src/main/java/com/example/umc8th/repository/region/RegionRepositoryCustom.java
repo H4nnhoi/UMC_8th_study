@@ -1,8 +1,6 @@
-package com.example.umc8th.repository.RegionRepository;
+package com.example.umc8th.repository.region;
 
 import com.example.umc8th.web.dto.home.HomeDto;
-
-import java.util.List;
 
 public interface RegionRepositoryCustom {
 

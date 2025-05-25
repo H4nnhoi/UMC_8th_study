@@ -11,4 +11,6 @@ public interface MyMissionRepository extends JpaRepository<MyMission, Long> {
     @Modifying
     @Query("DELETE FROM MyMission m WHERE m.member.id = :memberId")
     void deleteAllByMemberId(@Param("memberId") Long memberId);
+
+    boolean existsByMemberIdAndMissionId(Long key, Long value);
 }

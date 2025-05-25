@@ -4,18 +4,31 @@ import com.example.umc8th.domain.member.Gender;
 import com.example.umc8th.domain.member.MemberStatus;
 import com.example.umc8th.domain.member.Role;
 import com.example.umc8th.domain.member.SocialType;
+import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Data;
 
-@Data
-@Builder
+
 public class RequestMemberDto {
-    private String name;
-    private String nickname;
-    private String address;
-    private String specAddress;
-    private Gender gender;
-    private SocialType socialType;
-    private MemberStatus status;
-    private String email;
+
+    @Data
+    @Builder
+    public static class JoinDto{
+        @NotNull
+        private String name;
+        @NotNull
+        private String nickname;
+        @NotNull
+        private String address;
+        private String specAddress;
+        @NotNull
+        private Gender gender;
+        @NotNull
+        private SocialType socialType;
+        @NotNull
+        private MemberStatus status;
+        @NotNull
+        private String email;
+    }
+
 }
